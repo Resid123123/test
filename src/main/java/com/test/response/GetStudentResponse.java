@@ -9,6 +9,6 @@ public class GetStudentResponse {
     private String name;
     private String surname;
     private GetStudentInfoResponse studentInfo;
-//    private GetTeacherResponse teacher;
+//  private GetTeacherResponse teacher;
 
 }

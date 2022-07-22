@@ -14,14 +14,7 @@ import java.util.List;
 
 @Repository
 public interface StudentRepository extends PagingAndSortingRepository<StudentEntity, Long> {
-// findAllProjectedBy
-// findBy
-//    --
-// findById  Class<Projection>
 
-//    List<StudentEntity> findAll(Pageable pageable);
-
-    //List<StudentListView> findBy(Class<StudentListView> type);
     List<StudentListView> findBy(Class<StudentListView> type);
 
     List<StudentListView2> findAnoBy(Class<StudentListView2> type);
@@ -37,8 +30,6 @@ public interface StudentRepository extends PagingAndSortingRepository<StudentEnt
     StudentEntity test(@Param("newName") String newName);
 
 
-//    @Query("select u from User u where u.firstname = :#{#customer.firstname}")
-//    List<User> findUsersByCustomersFirstname(@Param("customer") Customer customer);
 }
 
 
@@ -48,4 +39,7 @@ public interface StudentRepository extends PagingAndSortingRepository<StudentEnt
 // Cacheing
 // JDBC
 // security
-
+// Exception
+// scheule
+// batch
+//

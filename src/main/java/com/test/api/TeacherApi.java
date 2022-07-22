@@ -34,15 +34,12 @@ public class TeacherApi {
     public GetTeacherResponse createTeacher(
             @RequestBody CreateTeacherRequest request
     ) {
-
-
-
-        return teacherService.createTeacher(request);
+    return teacherService.createTeacher(request);
     }
 
     @PutMapping("/update/{id}")
     public GetTeacherResponse createTeacher(
-            @RequestBody CreateTeacherRequest request,
+               @RequestBody CreateTeacherRequest request,
             @PathVariable Long id
     ) {
         return teacherService.updateTeacher(request, id);

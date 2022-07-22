@@ -4,6 +4,7 @@ import com.test.entity.StudentEntity;
 import com.test.request.CreateStudentRequest;
 import com.test.response.GetOneStudentViewResponse;
 import com.test.response.GetStudentResponse;
+import com.test.response.GetSubjectResponse;
 import com.test.response.SearchStudentResponse;
 import com.test.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ public class  StudentApi {
 
     @Autowired
     private StudentService studentService;
+
 
     @GetMapping("/search")
     public SearchStudentResponse search(

@@ -8,6 +8,7 @@ import com.test.repository.view.StudentListView2;
 import com.test.request.CreateStudentRequest;
 import com.test.response.GetOneStudentViewResponse;
 import com.test.response.GetStudentResponse;
+import com.test.response.GetSubjectResponse;
 import com.test.response.SearchStudentResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -30,6 +31,9 @@ public class StudentService {
     @Autowired
     private ObjectMapper objectMapper;
 
+
+
+
     public SearchStudentResponse getAllStudent(int page, int size) {
         SearchStudentResponse response = new SearchStudentResponse();
 
@@ -47,19 +51,9 @@ public class StudentService {
         return response;
     }
 
-//      studentEntityPage.getContent().stream()
-//                        .map(objectMapper::entityToDto)
-//                        .collect(Collectors.toList())
 
     public GetOneStudentViewResponse getStudentById(Long id) {
-        //studentRepository.findBy(StudentListView.class);
-        // studentRepository.findAnoBy(StudentListView2.class);
-        //studentRepository.findById(id, StudentListView.class);
-        //  studentRepository.findAnoById(id,StudentListView2.class);
-//        StudentEntity entity = studentRepository.findById(id).orElseThrow(NullPointerException::new);
-//        return objectMapper.entityToDto(entity);
-
-        return objectMapper.entityToDto(studentRepository.findById(id, StudentListView.class));   // map  etmek?????
+        return objectMapper.entityToDto(studentRepository.findById(id, StudentListView.class));
     }
 
     public GetStudentResponse createStudent(CreateStudentRequest request) {
