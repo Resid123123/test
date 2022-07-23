@@ -1,5 +1,6 @@
 package com.test.response;
 
+import com.test.repository.view.StudentListView;
 import lombok.Data;
 
 import java.util.List;

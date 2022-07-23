@@ -10,7 +10,6 @@ import com.test.request.CreateTeacherCourseRequest;
 import com.test.response.*;
 import org.mapstruct.Mapper;
 
-import java.util.List;
 
 @Mapper(componentModel = "spring")
 public abstract class ObjectMapper {
@@ -31,7 +30,7 @@ public abstract class ObjectMapper {
     public abstract GetCourseResponse entityToDto(CourseEntity entity);
 
     public abstract GetOneStudentViewResponse entityToDto(StudentListView entity);
-
+    public abstract GetOneStudentViewResponse entityToDto2(StudentListView entity);
 
     public abstract TeacherCourseEntity dtoToEntity(CreateTeacherCourseRequest request);
 

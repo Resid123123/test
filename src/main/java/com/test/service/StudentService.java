@@ -31,18 +31,18 @@ public class StudentService {
     @Autowired
     private ObjectMapper objectMapper;
 
-
-
-
     public SearchStudentResponse getAllStudent(int page, int size) {
         SearchStudentResponse response = new SearchStudentResponse();
+//
+//        Page<StudentEntity> studentEntityPage = studentRepository
+//                .findAll(PageRequest.of(page, size,Sort.by("id").descending()));
 
-        Page<StudentEntity> studentEntityPage = studentRepository
-                .findAll(PageRequest.of(page, size,Sort.by("id").descending()));
+        Page<StudentListView> studentEntityPage = studentRepository
+                .findBy(StudentListView.class,PageRequest.of(page, size,Sort.by("id").descending()));
 
         response.setStudentList(
                 studentEntityPage.getContent().stream()
-                        .map(objectMapper::entityToDto)
+                        .map(objectMapper::entityToDto2)
                         .collect(Collectors.toList())
         );
         response.setTotalPages(studentEntityPage.getTotalPages());
@@ -51,9 +51,8 @@ public class StudentService {
         return response;
     }
 
-
     public GetOneStudentViewResponse getStudentById(Long id) {
-        return objectMapper.entityToDto(studentRepository.findById(id, StudentListView.class));
+     return objectMapper.entityToDto(studentRepository.findById(id, StudentListView.class));
     }
 
     public GetStudentResponse createStudent(CreateStudentRequest request) {
