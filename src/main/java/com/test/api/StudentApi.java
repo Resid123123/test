@@ -2,6 +2,7 @@ package com.test.api;
 
 import com.test.entity.StudentEntity;
 import com.test.request.CreateStudentRequest;
+import com.test.request.SearchStudentRequest;
 import com.test.response.GetOneStudentViewResponse;
 import com.test.response.GetStudentResponse;
 import com.test.response.GetSubjectResponse;
@@ -24,12 +25,12 @@ public class  StudentApi {
 
     @GetMapping("/search")
     public SearchStudentResponse search(
+            @RequestBody SearchStudentRequest request,
             @RequestParam(value = "page",required = false,defaultValue = "0") int page,
             @RequestParam(value = "size",required = false,defaultValue = "3") int size
     ) {
-        return studentService.getAllStudent(page,size);
+        return studentService.getAllStudent(request,page,size);
     }
-
 
     @GetMapping("/{id}")
     public GetOneStudentViewResponse getStudentById(

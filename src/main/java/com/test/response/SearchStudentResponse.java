@@ -9,7 +9,6 @@ public class SearchStudentResponse {
 
     private Integer totalPages;
     private Long totalElements;
-    private List<GetOneStudentViewResponse> studentList;
-
+    private List<GetStudentResponse> studentList;
 
 }

@@ -4,22 +4,18 @@ import com.test.entity.StudentEntity;
 import com.test.mapper.ObjectMapper;
 import com.test.repository.StudentRepository;
 import com.test.repository.view.StudentListView;
-import com.test.repository.view.StudentListView2;
 import com.test.request.CreateStudentRequest;
+import com.test.request.SearchStudentRequest;
 import com.test.response.GetOneStudentViewResponse;
 import com.test.response.GetStudentResponse;
-import com.test.response.GetSubjectResponse;
 import com.test.response.SearchStudentResponse;
+import com.test.searchQuery.SearchQueries;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.html.Option;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -31,18 +27,18 @@ public class StudentService {
     @Autowired
     private ObjectMapper objectMapper;
 
-    public SearchStudentResponse getAllStudent(int page, int size) {
+    public SearchStudentResponse getAllStudent(SearchStudentRequest request, int page, int size) {
         SearchStudentResponse response = new SearchStudentResponse();
-//
-//        Page<StudentEntity> studentEntityPage = studentRepository
-//                .findAll(PageRequest.of(page, size,Sort.by("id").descending()));
 
-        Page<StudentListView> studentEntityPage = studentRepository
-                .findBy(StudentListView.class,PageRequest.of(page, size,Sort.by("id").descending()));
+        Page<StudentEntity> studentEntityPage = studentRepository
+                .findAll(
+                        SearchQueries.createStudentSpecification(request) ,
+                        PageRequest.of(page, size)
+                );
 
         response.setStudentList(
                 studentEntityPage.getContent().stream()
-                        .map(objectMapper::entityToDto2)
+                        .map(objectMapper::entityToDto)
                         .collect(Collectors.toList())
         );
         response.setTotalPages(studentEntityPage.getTotalPages());

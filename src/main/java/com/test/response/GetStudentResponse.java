@@ -8,7 +8,7 @@ public class GetStudentResponse {
     private Long id;
     private String name;
     private String surname;
-    private GetStudentInfoResponse studentInfo;
+//    private GetStudentInfoResponse studentInfo;
 //  private GetTeacherResponse teacher;
 
 }
