@@ -29,7 +29,7 @@ public class StudentSpecification implements Specification<StudentEntity> {
 
         if (Objects.nonNull(request)) {
             if (Objects.nonNull(request.getName())){
-                 predicates.add(cb.like(root.get(StudentEntity_.name),"%"+request.getName()+"%"));
+                predicates.add(cb.like(root.get(StudentEntity_.name),"%"+request.getName()+"%"));
             }
         }
 
