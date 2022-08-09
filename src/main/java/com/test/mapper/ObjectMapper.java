@@ -48,4 +48,5 @@ public abstract class ObjectMapper {
     }
 
 
+    public abstract TokenEntity authResponseToCache(AuthResponse authResponse);
 }

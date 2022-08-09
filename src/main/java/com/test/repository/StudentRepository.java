@@ -30,13 +30,19 @@ public interface StudentRepository extends PagingAndSortingRepository<StudentEnt
 
 
 // Projection +
+// JDBC+
+// Criteria+
 
-// Criteria
-// security
+// Security +
+// JWT +
+// Redis
 // Exception
-
+// Auditable
+// Localization
+// AOP
 
 // Cacheing
-// JDBC
-// scheule
+// Schedule
 // batch
+// Statemachine
+// Docker

@@ -33,6 +33,14 @@ public class StudentSpecification implements Specification<StudentEntity> {
             }
         }
 
+        if (Objects.nonNull(request)) {
+            if (Objects.nonNull(request.getTeacherId())){
+                predicates.add(
+                        cb.equal(root.join("teacher").get("id"),request.getTeacherId())
+                );
+            }
+        }
+
         return cb.and(predicates.toArray(new Predicate[]{}));
     }
 }

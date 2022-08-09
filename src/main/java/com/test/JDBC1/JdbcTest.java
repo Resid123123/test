@@ -24,7 +24,7 @@ public class JdbcTest {
             teacher.setId(rs.getLong(1));
             teacher.setName(rs.getString(2));
             teacher.setSurname(rs.getString(3));
-            ///// /4  System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3));
+            ///// /4System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3));
             teachers.add(teacher);
         }
         if (con != null && !con.isClosed()) {
