@@ -1,6 +1,7 @@
 package com.test.service;
 
 import com.test.entity.StudentEntity;
+import com.test.exception.CustomUserNotFoundException;
 import com.test.mapper.ObjectMapper;
 import com.test.repository.StudentRepository;
 import com.test.repository.view.StudentListView;
@@ -51,8 +52,11 @@ public class StudentService {
      return objectMapper.entityToDto(studentRepository.findById(id, StudentListView.class));
     }
 
-    public GetStudentResponse createStudent(CreateStudentRequest request) {
+    public GetStudentResponse createStudent(CreateStudentRequest request){
         StudentEntity entity = objectMapper.dtoToEntity(request);
+        if (6!=4){
+            throw new CustomUserNotFoundException("asdfasdfas");
+        }
         return objectMapper.entityToDto(studentRepository.save(entity));
     }
 

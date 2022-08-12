@@ -1,6 +1,8 @@
 package com.test.api;
 
+import com.test.JDBC1.EmailDetails;
 import com.test.JDBC1.JdbcTest;
+import com.test.JDBC1.SendMail;
 import com.test.JDBC1.teacher;
 import com.test.entity.TeacherEntity;
 import com.test.request.CreateTeacherRequest;
@@ -24,15 +26,22 @@ public class TeacherApi {
     @Autowired
     private JdbcTest jdbcTest;
 
+    @Autowired
+    private SendMail sendMail;
+
     @GetMapping("/all")
     public List<GetTeacherResponse> getAllTeacher() {
         return teacherService.getAllTeacher();
     }
 
     @GetMapping("/all1")
-    public List<teacher> getAllTeacher1() throws SQLException {
-
-        return jdbcTest.jdbc11();
+    public String getAllTeacher1() throws SQLException {
+        EmailDetails details=new EmailDetails();
+        details.setAttachment("dsc");
+        details.setRecipient("frpblcccnt@gmail.com");
+        details.setSubject("Test");
+        details.setMsgBody("aaaa");
+        return sendMail.sendSimpleMail(details);
     }
 
     @GetMapping("/{id}")

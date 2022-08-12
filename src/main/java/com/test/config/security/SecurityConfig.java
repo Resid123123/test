@@ -26,8 +26,6 @@ import static com.test.config.security.SecurityUtil.WHITE_LIST;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
-//    @Autowired
-//    private PasswordEncoder passwordEncoder;
 
     private final JwtUtil jwtUtil;
 
@@ -35,12 +33,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder getPasswordEncoder() {
         return new BCryptPasswordEncoder(8);
     }
-
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//           auth.userDetailsService(userService)
-//                   .passwordEncoder(getPasswordEncoder());
-//    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {

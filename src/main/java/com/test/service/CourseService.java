@@ -7,6 +7,7 @@ import com.test.repository.TeacherCourseRepository;
 import com.test.repository.TeacherRepository;
 import com.test.request.CreateCourseRequest;
 import com.test.response.GetCourseResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,7 +43,6 @@ public class CourseService {
         CourseEntity entity = objectMapper.dtoToEntity(request);
         return objectMapper.entityToDto(courseRepository.save(entity));
     }
-
 
 
     public GetCourseResponse updateCourse(CreateCourseRequest request, Long id) {

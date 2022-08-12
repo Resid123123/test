@@ -35,14 +35,16 @@ public interface StudentRepository extends PagingAndSortingRepository<StudentEnt
 
 // Security +
 // JWT +
+// AOP Aspect Oriented Programming +
+// Exception +
+// Write logs to file
 // Redis
-// Exception
-// Auditable
 // Localization
-// AOP
+// Auditable
 
 // Cacheing
 // Schedule
-// batch
+// Batch
 // Statemachine
 // Docker
+//Test App Tests
