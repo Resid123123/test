@@ -1,8 +1,7 @@
-package com.test.repository;
+package com.test.repository.mysql;
 
 import com.test.entity.StudentEntity;
-import com.test.repository.view.StudentListView;
-import com.test.response.SearchStudentResponse;
+import com.test.repository.mysql.view.StudentListView;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
@@ -37,8 +36,8 @@ public interface StudentRepository extends PagingAndSortingRepository<StudentEnt
 // JWT +
 // AOP Aspect Oriented Programming +
 // Exception +
-// Write logs to file
-// Redis
+// Write logs to file +
+// Redis +
 // Localization
 // Auditable
 
@@ -47,4 +46,4 @@ public interface StudentRepository extends PagingAndSortingRepository<StudentEnt
 // Batch
 // Statemachine
 // Docker
-//Test App Tests
+// Test App Tests

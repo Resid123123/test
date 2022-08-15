@@ -2,11 +2,10 @@ package com.test.service;
 
 import com.test.config.security.JwtUtil;
 import com.test.entity.UserEntity;
-import com.test.repository.UserRepository;
+import com.test.repository.mysql.UserRepository;
 import com.test.request.LoginRequest;
 import com.test.response.AuthResponse;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;

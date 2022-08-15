@@ -1,8 +1,9 @@
 package com.test.config.security;
 
 import com.test.entity.TokenEntity;
+import com.test.entity.TokenEntity2;
 import com.test.mapper.ObjectMapper;
-import com.test.repository.TokenRepository;
+import com.test.repository.redis.TokenRepository;
 import com.test.response.AuthResponse;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -36,11 +37,11 @@ public class JwtUtil {
                 .username(appUser.getUsername())
                 .token(accessToken(appUser))
                 .build();
-        tokenRepository.save(objectMapper.authResponseToCache(authResponse));
+        tokenRepository.save(objectMapper.authResponseToCache2(authResponse));
         return authResponse;
     }
 
-    public TokenEntity verifyToken(String authorizationHeader) {
+    public TokenEntity2 verifyToken(String authorizationHeader) {
         String token = authorizationHeader.substring("Bearer ".length());
         if (findAuthToken(token).isPresent()) {
             return findAuthToken(token).get();
@@ -53,7 +54,7 @@ public class JwtUtil {
         if (Objects.nonNull(authorizationHeader)) {
             String token = authorizationHeader.substring("Bearer ".length());
             if (findAuthToken(token).isPresent()) {
-                tokenRepository.deleteByToken(token);
+                tokenRepository.deleteById(token);
             } else {
                 throw new RuntimeException();
             }
@@ -62,8 +63,8 @@ public class JwtUtil {
         }
     }
 
-    private Optional<TokenEntity> findAuthToken(String token) {
-        return tokenRepository.findByToken(token);
+    private Optional<TokenEntity2> findAuthToken(String token) {
+        return tokenRepository.findById(token);
     }
 
     private String accessToken(UserDetails user) {

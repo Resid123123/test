@@ -2,6 +2,7 @@ package com.test.config.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.test.entity.TokenEntity;
+import com.test.entity.TokenEntity2;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -38,7 +39,7 @@ public class AuthorizationFilter extends OncePerRequestFilter{
             } else {
                 final String authorizationHeader = request.getHeader(AUTHORIZATION);
                 if (Objects.nonNull(authorizationHeader) && authorizationHeader.startsWith("Bearer ")) {
-                    TokenEntity token = jwtUtil.verifyToken(authorizationHeader);
+                    TokenEntity2 token = jwtUtil.verifyToken(authorizationHeader);
                     UsernamePasswordAuthenticationToken authenticationToken =
                             new UsernamePasswordAuthenticationToken(
                                     token.getUsername(), null, List.of((GrantedAuthority) () -> "ADMIN")

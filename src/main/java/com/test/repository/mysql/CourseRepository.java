@@ -1,4 +1,4 @@
-package com.test.repository;
+package com.test.repository.mysql;
 
 import com.test.entity.CourseEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -4,16 +4,13 @@ import com.test.entity.CourseEntity;
 import com.test.entity.TeacherCourseEntity;
 import com.test.entity.TeacherEntity;
 import com.test.mapper.ObjectMapper;
-import com.test.repository.CourseRepository;
-import com.test.repository.TeacherCourseRepository;
-import com.test.repository.TeacherRepository;
-import com.test.response.GetCourseResponse;
+import com.test.repository.mysql.CourseRepository;
+import com.test.repository.mysql.TeacherCourseRepository;
+import com.test.repository.mysql.TeacherRepository;
 import com.test.response.GetTeacherCourseResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 

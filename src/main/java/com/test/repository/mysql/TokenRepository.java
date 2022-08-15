@@ -1,4 +1,4 @@
-package com.test.repository;
+package com.test.repository.mysql;
 
 import antlr.Token;
 import com.test.entity.TokenEntity;

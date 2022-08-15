@@ -1,12 +1,8 @@
 package com.test.service;
 
-import com.test.entity.CourseEntity;
-import com.test.entity.StudentEntity;
 import com.test.entity.SubjectEntity;
 import com.test.mapper.ObjectMapper;
-import com.test.repository.SubjectRepository;
-import com.test.request.CreateCourseRequest;
-import com.test.request.CreateStudentRequest;
+import com.test.repository.mysql.SubjectRepository;
 import com.test.request.CreateSubjectRequest;
 import com.test.response.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +11,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.stream.Collectors;
 
 @Service

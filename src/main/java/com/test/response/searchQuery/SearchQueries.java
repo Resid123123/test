@@ -1,4 +1,4 @@
-package com.test.searchQuery;
+package com.test.response.searchQuery;
 
 import com.test.entity.StudentEntity;
 import com.test.request.SearchStudentRequest;

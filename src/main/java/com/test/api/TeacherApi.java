@@ -41,7 +41,8 @@ public class TeacherApi {
         details.setRecipient("frpblcccnt@gmail.com");
         details.setSubject("Test");
         details.setMsgBody("aaaa");
-        return sendMail.sendSimpleMail(details);
+//        return sendMail.sendSimpleMail(details);
+        return null;
     }
 
     @GetMapping("/{id}")

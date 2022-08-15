@@ -3,20 +3,19 @@ package com.test.service;
 import com.test.entity.StudentEntity;
 import com.test.exception.CustomUserNotFoundException;
 import com.test.mapper.ObjectMapper;
-import com.test.repository.StudentRepository;
-import com.test.repository.view.StudentListView;
+import com.test.repository.mysql.StudentRepository;
+import com.test.repository.mysql.view.StudentListView;
 import com.test.request.CreateStudentRequest;
 import com.test.request.SearchStudentRequest;
 import com.test.response.GetOneStudentViewResponse;
 import com.test.response.GetStudentResponse;
 import com.test.response.SearchStudentResponse;
-import com.test.searchQuery.SearchQueries;
+import com.test.response.searchQuery.SearchQueries;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.stream.Collectors;
 
 @Service

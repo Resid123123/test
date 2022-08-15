@@ -1,4 +1,4 @@
-package com.test.repository.view;
+package com.test.repository.mysql.view;
 
 
 public interface StudentListView {

@@ -2,12 +2,11 @@ package com.test.service;
 
 import com.test.entity.CourseEntity;
 import com.test.mapper.ObjectMapper;
-import com.test.repository.CourseRepository;
-import com.test.repository.TeacherCourseRepository;
-import com.test.repository.TeacherRepository;
+import com.test.repository.mysql.CourseRepository;
+import com.test.repository.mysql.TeacherCourseRepository;
+import com.test.repository.mysql.TeacherRepository;
 import com.test.request.CreateCourseRequest;
 import com.test.response.GetCourseResponse;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

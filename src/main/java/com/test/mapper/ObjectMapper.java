@@ -1,8 +1,7 @@
 package com.test.mapper;
 
 import com.test.entity.*;
-import com.test.repository.SubjectRepository;
-import com.test.repository.view.StudentListView;
+import com.test.repository.mysql.view.StudentListView;
 import com.test.request.CreateCourseRequest;
 import com.test.request.CreateStudentRequest;
 import com.test.request.CreateSubjectRequest;
@@ -49,4 +48,5 @@ public abstract class ObjectMapper {
 
 
     public abstract TokenEntity authResponseToCache(AuthResponse authResponse);
+    public abstract TokenEntity2 authResponseToCache2(AuthResponse authResponse);
 }
